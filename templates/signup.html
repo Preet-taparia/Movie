@@ -1,0 +1,47 @@
+{% extends "components/base.html" %}
+
+{% block title %}Sign up{% endblock title %}
+
+{% block main %}
+
+
+<div class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="border border-3 border-primary"></div>
+          <div class="card bg-white shadow-lg">
+            <div class="card-body p-5">
+
+              <form action="/signup" method="POST" class="mb-3 mt-md-4">
+                <h2 class="fw-bold mb-2 text-uppercase text-center ">Sign UP</h2>
+                <div class="mb-3">
+                  <div class="mb-3">
+                    <label for="username" class="form-label ">username</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="First Last">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label ">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="*******">
+                  </div>
+                <div class="d-grid">
+                  <button class="btn btn-outline-dark" type="submit">Sign Up</button>
+                </div>
+              </form>
+
+              <div>
+                <p class="mb-0  text-center">Already have an account? 
+                  <a href="{{ url_for('login') }}" class="text-primary fw-bold">
+                    Log in
+                  </a>
+                </p>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock main %}

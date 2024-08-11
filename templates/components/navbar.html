@@ -1,0 +1,11 @@
+<nav class="navbar sticky-top bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('home') }}"><button type="button" class="btn btn-primary btn-lg">The Movie
+        App</button></a>
+        Welcome {{User}}
+    <div>
+      <a class="navbar-brand" href="{{ url_for('search_movies') }}"> Find </a>
+      <a class="navbar-brand" href="{{ url_for('logout') }}"> Logout </a>
+    </div>
+  </div>
+</nav>

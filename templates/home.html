@@ -1,0 +1,31 @@
+{% extends "components/base.html" %}
+
+{% block title %}The Movie App{% endblock title %}
+
+{% block main %}
+
+{% include "components/navbar.html" %}
+
+{% include "components/slider.html" %}
+
+<div class="container-fluid mx-auto">
+    <div class="row">
+        {% for movie in movies %}
+        <div class="col-md-3 mt-2 mb-3  ">
+            <div class="card h-100 ">
+                <img src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" class="card-img-top" alt="...">
+                <div class="card-body d-flex flex-column">
+
+                    <a href="{{ url_for('movie_id', id=movie['id']) }}">
+                        <h5 class="card-title"> {{movie.original_title}} </h5>
+                    </a>
+
+                    <p class="card-text">{{movie.overview.split()[:20]|join(' ') + "......"}}</p>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock main %}
